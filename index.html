@@ -1,39 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pulipati Sairam | Backend Software Engineer</title>
   
-  <!-- SEO & Social Meta -->
-  <meta name="description" content="Portfolio of Pulipati Sairam, Backend Software Engineer with 5+ years of experience specializing in PHP, Laravel 11, Enterprise Web Applications, and MySQL database optimization.">
-  <meta name="keywords" content="Pulipati Sairam, Backend Software Engineer, PHP Developer, Laravel Developer, MySQL Optimization, Hyderabad, Web Applications">
-  <meta name="author" content="Pulipati Sairam">
-  <link rel="canonical" href="https://sairampulipati.github.io/">
-
-  <!-- OpenGraph / Facebook / LinkedIn -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sairampulipati.github.io/">
-  <meta property="og:title" content="Pulipati Sairam | Backend Software Engineer">
-  <meta property="og:description" content="Backend Software Engineer with 5+ years building scalable PHP, Laravel, scalable backend systems, and high-performance MySQL databases.">
-  <meta property="og:image" content="https://sairampulipati.github.io/preview.png">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://sairampulipati.github.io/">
-  <meta name="twitter:title" content="Pulipati Sairam | Backend Software Engineer">
-  <meta name="twitter:description" content="Backend Software Engineer with 5+ years building scalable PHP, Laravel, scalable backend systems, and high-performance MySQL databases.">
-  <meta name="twitter:image" content="https://sairampulipati.github.io/preview.png">
-
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-
-  <!-- Preconnect & Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CSS CDN -->
+  <meta name="description" content="Portfolio of Pulipati Sairam, Backend Software Engineer specializing in PHP, Laravel, MySQL 3NF database architecture, and RESTful APIs.">
+  <meta name="keywords" content="Pulipati Sairam, Backend Software Engineer, PHP, Laravel, MySQL, REST API, Database Architecture, Hyderabad">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -41,16 +15,16 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'monospace'],
+            sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
           },
           colors: {
             brand: {
               50: '#f0f9ff',
               100: '#e0f2fe',
               400: '#38bdf8',
-              500: '#0284c7',
-              600: '#0369a1',
+              500: '#0ea5e9',
+              600: '#0284c7',
             }
           }
         }
@@ -58,402 +32,224 @@
     }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
-    /* Mobile-safe dynamic viewport height */
-    .hero-min-h {
-      min-height: calc(100vh - 4rem);
-      min-height: calc(100dvh - 4rem);
+    /* Dot matrix grid background */
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .dark .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
     }
     
-    /* Subtle tech grid background */
-    .grid-pattern-dark {
-      background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-    .grid-pattern-light {
-      background-image: 
-        linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-
-    /* Glassmorphism Cards */
-    .dark .glass-card {
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .glass-card {
+    /* Sleek card border & glass */
+    .pro-card {
       background: rgba(255, 255, 255, 0.85);
       border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
     }
-
-    /* Smooth focus rings for accessibility */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid #0284c7;
-      outline-offset: 2px;
+    .dark .pro-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+    }
+    .dark .pro-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+      box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
     }
   </style>
-
-  <!-- Structured Schema Data for Google Search -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Pulipati Sairam",
-    "jobTitle": "Backend Software Engineer",
-    "url": "https://sairampulipati.github.io/",
-    "sameAs": [
-      "https://www.linkedin.com/in/pulipati-sairam/",
-      "https://github.com/SairamPulipati"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Hyderabad",
-      "addressRegion": "Telangana",
-      "addressCountry": "India"
-    },
-    "knowsAbout": ["PHP", "Laravel", "Database Optimization", "MySQL", "REST APIs", "Healthcare IT"]
-  }
-  </script>
 </head>
-<body class="bg-slate-50 dark:bg-[#090d16] text-slate-800 dark:text-slate-100 transition-colors duration-300 antialiased overflow-x-hidden selection:bg-sky-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 dark:bg-[#070b14] dark:text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-white transition-colors duration-300">
 
-  <!-- Background Canvas Grid -->
-  <div class="fixed inset-0 pointer-events-none z-0 grid-pattern-light dark:grid-pattern-dark"></div>
-  <div class="fixed top-0 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="fixed bottom-0 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- Ambient Glow Spots -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+  <div class="fixed top-0 left-1/4 w-[600px] h-[400px] bg-sky-500/10 dark:bg-sky-500/[0.07] rounded-full blur-[140px] pointer-events-none z-0"></div>
+  <div class="fixed bottom-1/4 right-10 w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-500/[0.06] rounded-full blur-[150px] pointer-events-none z-0"></div>
 
-  <!-- Toast Notification Container -->
-  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white border border-sky-500/40 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-sm font-medium">
-    <span class="text-emerald-400">✓</span>
-    <span id="toast-msg">Copied to clipboard!</span>
-  </div>
-
-  <!-- Navbar -->
-  <header class="fixed top-0 inset-x-0 z-40 bg-white/80 dark:bg-[#090d16]/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 transition-colors">
+  <!-- Sticky Navbar -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/70 dark:bg-[#070b14]/75 backdrop-blur-xl border-b border-slate-200/80 dark:border-white/[0.06]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-2.5 group">
-        <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-teal-400 flex items-center justify-center text-slate-950 font-black text-sm shadow-md group-hover:scale-105 transition-transform">SP</span>
+      <!-- Logo / Monogram -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white font-mono font-black text-sm shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
+          SP
+        </div>
         <div>
-          <span class="font-bold text-base sm:text-lg text-slate-900 dark:text-white group-hover:text-sky-500 transition-colors">Pulipati Sairam</span>
-          <span class="hidden sm:inline-block text-xs text-slate-500 dark:text-slate-400 ml-1.5">• Backend Engineer</span>
+          <span class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white tracking-tight block">Pulipati Sairam</span>
+          <span class="font-mono text-[10px] text-slate-500 dark:text-slate-400 block -mt-0.5">Backend Software Engineer</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300">
-        <a href="#about" class="hover:text-sky-500 transition-colors py-1">About</a>
-        <a href="#projects" class="hover:text-sky-500 transition-colors py-1">Projects</a>
-        <a href="#experience" class="hover:text-sky-500 transition-colors py-1">Experience</a>
-        <a href="#skills" class="hover:text-sky-500 transition-colors py-1">Skills</a>
-        <a href="#contact" class="hover:text-sky-500 transition-colors py-1">Contact</a>
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 font-medium text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+        <a href="#about" class="px-3 py-1.5 rounded-lg hover:text-sky-500 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.04] transition-all">About</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-lg hover:text-sky-500 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.04] transition-all">Architecture &amp; Projects</a>
+        <a href="#experience" class="px-3 py-1.5 rounded-lg hover:text-sky-500 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.04] transition-all">Experience</a>
+        <a href="#skills" class="px-3 py-1.5 rounded-lg hover:text-sky-500 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.04] transition-all">Skills</a>
+        <a href="#contact" class="px-3 py-1.5 rounded-lg hover:text-sky-500 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.04] transition-all">Contact</a>
       </nav>
 
-      <!-- Action Items: Theme Toggle & Resume & Mobile Menu -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        
-        <!-- Dark / Light Mode Switcher -->
-        <button id="theme-toggle" aria-label="Toggle Theme" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-          <svg id="theme-icon-sun" class="w-5 h-5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-          <svg id="theme-icon-moon" class="w-5 h-5 block dark:hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+      <!-- Action & Dark Mode Toggle -->
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" aria-label="Toggle theme" class="w-9 h-9 rounded-xl flex items-center justify-center border border-slate-200 dark:border-white/[0.08] text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-all">
+          <svg class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
 
-        <!-- Direct Resume Download Button -->
-        <a href="Sairam_Pulipati_Resume.pdf" download class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-sky-600 hover:bg-sky-500 text-white shadow-md shadow-sky-600/25 transition-all">
-          <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          <span class="hidden sm:inline">Resume PDF</span>
-          <span class="sm:hidden">Resume</span>
+        <a href="Sairam_Pulipati_Resume.pdf" download class="px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs sm:text-sm transition-all shadow-md shadow-sky-600/25 flex items-center gap-2">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span class="hidden sm:inline">Resume</span> PDF
         </a>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="md:hidden w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-
       </div>
-    </div>
 
-    <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg px-4 pt-3 pb-5 space-y-2 text-base font-semibold">
-      <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">About</a>
-      <a href="#projects" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Projects</a>
-      <a href="#experience" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Experience</a>
-      <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Skills</a>
-      <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Contact</a>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28 z-10 flex items-center hero-min-h">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+  <section class="relative pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28 z-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
         <!-- Left Column: Copy & Actions -->
-        <div class="lg:col-span-7 order-2 lg:order-1">
+        <div class="lg:col-span-7">
+          
           <!-- Status Pill -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-700 dark:text-emerald-400 text-xs sm:text-sm font-semibold mb-6">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            Open to Backend Software Engineer Opportunities
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-700 dark:text-emerald-400 text-xs sm:text-sm font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Available for Backend Engineering Opportunities
           </div>
 
           <!-- Main Title -->
-          <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-            Backend Software Engineer <br class="hidden sm:inline">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-teal-500 to-indigo-500 dark:from-sky-400 dark:via-teal-300 dark:to-indigo-400">
-              Healthcare IT &amp; Web Systems
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6">
+            Engineering robust backends, scalable APIs, and
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-teal-400 to-indigo-500 dark:from-sky-400 dark:via-teal-300 dark:to-indigo-300">
+              optimized databases.
             </span>
           </h1>
 
-          <!-- Subtitle & Punchline -->
-          <p class="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-            Hi, I’m <strong>Pulipati Sairam</strong>. I have <strong>5+ years of experience</strong> engineering robust web architectures, engineering enterprise web platforms, RESTful APIs, and clinical portals for healthcare networks (Aetna, Humana), and optimizing high-traffic MySQL databases.
+          <!-- Punchline & Bio -->
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8 max-w-2xl font-normal">
+            Hi, I’m <strong>Pulipati Sairam</strong>. Backend Software Engineer with <strong>3+ years of professional experience</strong> engineering enterprise web platforms, normalizing high-concurrency relational schemas (<strong class="text-slate-900 dark:text-white">MySQL 3NF</strong>), and building dependable <strong class="text-slate-900 dark:text-white">PHP &amp; Laravel</strong> services.
           </p>
 
-          <!-- CTA Buttons -->
+          <!-- Primary Actions -->
           <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-10">
-            <a href="#projects" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm transition-all shadow-lg shadow-sky-600/30 flex items-center justify-center gap-2">
+            <a href="#projects" class="px-6 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm transition-all shadow-lg shadow-sky-600/30 flex items-center gap-2">
               Explore Featured Projects
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
 
-            <a href="https://github.com/SairamPulipati" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm transition-all border border-slate-300 dark:border-slate-700 flex items-center gap-2 shadow-sm">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <a href="https://github.com/SairamPulipati" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm transition-all border border-slate-300 dark:border-white/[0.08] flex items-center gap-2 shadow-sm">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub
             </a>
 
-            <a href="https://www.linkedin.com/in/pulipati-sairam/" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm transition-all border border-slate-300 dark:border-slate-700 flex items-center gap-2 shadow-sm">
-              <svg class="w-5 h-5 fill-sky-500" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <a href="https://www.linkedin.com/in/pulipati-sairam/" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm transition-all border border-slate-300 dark:border-white/[0.08] flex items-center gap-2 shadow-sm">
+              <svg class="w-4 h-4 fill-sky-500" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               LinkedIn
             </a>
           </div>
 
-          <!-- Metric Cards Grid -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-slate-200 dark:border-slate-800/80">
-            <div class="glass-card rounded-xl p-3.5 sm:p-4">
-              <div class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">5+ Years</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">Software Dev</div>
+          <!-- Quick Metrics Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-slate-200 dark:border-white/[0.08]">
+            <div class="pro-card rounded-xl p-3 sm:p-4">
+              <div class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">3+ Years</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Backend Dev</div>
             </div>
-            <div class="glass-card rounded-xl p-3.5 sm:p-4">
-              <div class="text-xl sm:text-2xl font-black text-sky-600 dark:text-sky-400">3+ Years</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">Web Architectures</div>
+            <div class="pro-card rounded-xl p-3 sm:p-4">
+              <div class="text-xl sm:text-2xl font-black text-sky-600 dark:text-sky-400">3NF</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Database Design</div>
             </div>
-            <div class="glass-card rounded-xl p-3.5 sm:p-4">
+            <div class="pro-card rounded-xl p-3 sm:p-4">
               <div class="text-xl sm:text-2xl font-black text-teal-600 dark:text-teal-400">15+ Apps</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">Production</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Production Sites</div>
             </div>
-            <div class="glass-card rounded-xl p-3.5 sm:p-4">
+            <div class="pro-card rounded-xl p-3 sm:p-4">
               <div class="text-xl sm:text-2xl font-black text-indigo-600 dark:text-indigo-400">99.9%</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-medium">Uptime</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">SLA Uptime</div>
             </div>
           </div>
+
         </div>
 
-                <!-- Right Column: Techie Coding Vector Illustration & Interactive Console -->
-        <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center">
-          <div class="w-full max-w-lg relative">
-            <!-- Ambient Glow -->
-            <div class="absolute -inset-3 bg-gradient-to-tr from-sky-500/20 via-teal-500/15 to-indigo-500/20 rounded-3xl blur-xl opacity-75"></div>
+        <!-- Right Column: Interactive Live Backend Console -->
+        <div class="lg:col-span-5">
+          <div class="w-full pro-card rounded-2xl overflow-hidden shadow-2xl">
+            
+            <!-- Window Titlebar with Clickable Tabs -->
+            <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+              </div>
+              <div class="flex items-center gap-1.5 font-mono text-xs">
+                <button onclick="switchTab('api')" id="tab-api" class="px-2.5 py-1 rounded bg-slate-800 text-sky-400 font-bold transition-all">API.php</button>
+                <button onclick="switchTab('sql')" id="tab-sql" class="px-2.5 py-1 rounded text-slate-400 hover:text-slate-200 transition-all">Schema.sql</button>
+                <button onclick="switchTab('test')" id="tab-test" class="px-2.5 py-1 rounded text-slate-400 hover:text-slate-200 transition-all">Test.sh</button>
+              </div>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 200 OK
+              </span>
+            </div>
 
-            <!-- Main Workstation Card -->
-            <div class="relative bg-slate-900/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-700/70 rounded-2xl p-4 sm:p-5 shadow-2xl overflow-hidden">
-
-              <!-- Window Bar -->
-              <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
-                <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-                  <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-                  <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                  <span class="ml-1.5 text-xs font-mono text-slate-400 font-medium truncate">BackendService.php</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Debugger: Active
-                  </span>
-                </div>
+            <!-- Code Display Area -->
+            <div class="bg-[#0b101b] p-4 sm:p-5 font-mono text-xs text-slate-300 leading-relaxed overflow-x-auto min-h-[260px]">
+              
+              <!-- Tab 1: API / Laravel Controller -->
+              <div id="view-api" class="space-y-1 block">
+                <p class="text-slate-500">// App\Http\Controllers\ClaimController.php</p>
+                <p><span class="text-rose-400">class</span> <span class="text-amber-300">ClaimController</span> <span class="text-rose-400">extends</span> <span class="text-slate-400">Controller</span> {</p>
+                <p class="pl-4"><span class="text-rose-400">public function</span> <span class="text-sky-400">processClaims</span>(<span class="text-amber-300">Request</span> <span class="text-teal-300">$req</span>): <span class="text-indigo-300">JsonResponse</span> {</p>
+                <p class="pl-8"><span class="text-teal-300">$claims</span> = <span class="text-sky-400">Claim</span>::<span class="text-indigo-300">where</span>(<span class="text-emerald-300">'status'</span>, <span class="text-emerald-300">'pending'</span>)</p>
+                <p class="pl-12">-&gt;<span class="text-indigo-300">with</span>([<span class="text-emerald-300">'patient'</span>, <span class="text-emerald-300">'provider'</span>])</p>
+                <p class="pl-12">-&gt;<span class="text-indigo-300">chunkById</span>(<span class="text-amber-400">1000</span>, <span class="text-rose-400">fn</span>(<span class="text-teal-300">$chunk</span>) =&gt; <span class="text-indigo-300">dispatch</span>(<span class="text-teal-300">$chunk</span>));</p>
+                <p class="pl-8"><span class="text-rose-400">return</span> <span class="text-indigo-300">response</span>()-&gt;<span class="text-indigo-300">json</span>([<span class="text-emerald-300">'success'</span> =&gt; <span class="text-amber-400">true</span>, <span class="text-emerald-300">'latency_ms'</span> =&gt; <span class="text-amber-400">38</span>]);</p>
+                <p class="pl-4">}</p>
+                <p>}</p>
               </div>
 
-              <!-- Vector Techie Coding Illustration (SVG) -->
-              <div class="relative w-full rounded-xl bg-slate-950/85 border border-slate-800/80 p-2 sm:p-3 mb-3">
-                <svg viewBox="0 0 600 350" class="w-full h-auto select-none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="deskAmbient" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.2"/>
-                      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.08"/>
-                    </linearGradient>
-                    <linearGradient id="deskGradHero" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#1e293b"/>
-                      <stop offset="100%" stop-color="#0f172a"/>
-                    </linearGradient>
-                  </defs>
-
-                  <!-- Ambient Background Glow -->
-                  <ellipse cx="300" cy="210" rx="260" ry="75" fill="url(#deskAmbient)" />
-
-                  <!-- Desk Surface -->
-                  <path d="M 60 240 L 540 240 L 580 310 L 20 310 Z" fill="url(#deskGradHero)" stroke="#334155" stroke-width="2"/>
-                  <line x1="20" y1="310" x2="580" y2="310" stroke="#475569" stroke-width="3"/>
-                  <rect x="70" y="310" width="16" height="40" fill="#0f172a"/>
-                  <rect x="514" y="310" width="16" height="40" fill="#0f172a"/>
-
-                  <!-- PC Server Tower / LED Lights -->
-                  <rect x="495" y="160" width="65" height="110" rx="6" fill="#0f172a" stroke="#334155" stroke-width="2"/>
-                  <rect x="505" y="172" width="45" height="5" rx="2" fill="#38bdf8"/>
-                  <rect x="505" y="185" width="45" height="5" rx="2" fill="#2dd4bf"/>
-                  <circle cx="512" cy="210" r="14" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 2"/>
-                  <circle cx="512" cy="210" r="4" fill="#38bdf8"/>
-                  <circle cx="512" cy="245" r="3" fill="#10b981"/>
-                  <circle cx="524" cy="245" r="3" fill="#f59e0b"/>
-
-                  <!-- Primary Monitor (Code IDE) -->
-                  <rect x="155" y="65" width="220" height="145" rx="6" fill="#090d16" stroke="#38bdf8" stroke-width="2.5"/>
-                  <rect x="250" y="210" width="30" height="30" fill="#1e293b"/>
-                  <rect x="230" y="238" width="70" height="6" rx="2" fill="#334155"/>
-                  <rect x="155" y="65" width="220" height="18" rx="6" fill="#1e293b"/>
-                  <circle cx="166" cy="74" r="3" fill="#ef4444"/>
-                  <circle cx="176" cy="74" r="3" fill="#f59e0b"/>
-                  <circle cx="186" cy="74" r="3" fill="#10b981"/>
-                  <rect x="200" y="70" width="60" height="8" rx="2" fill="#334155"/>
-
-                  <!-- Code Lines (Syntax Highlighting) -->
-                  <rect x="168" y="92" width="45" height="4" rx="2" fill="#818cf8"/>
-                  <rect x="218" y="92" width="60" height="4" rx="2" fill="#38bdf8"/>
-                  <rect x="180" y="102" width="35" height="4" rx="2" fill="#f43f5e"/>
-                  <rect x="220" y="102" width="75" height="4" rx="2" fill="#34d399"/>
-                  <rect x="180" y="112" width="55" height="4" rx="2" fill="#fbbf24"/>
-                  <rect x="240" y="112" width="40" height="4" rx="2" fill="#38bdf8"/>
-                  <rect x="195" y="122" width="90" height="4" rx="2" fill="#a78bfa"/>
-                  <rect x="195" y="132" width="65" height="4" rx="2" fill="#34d399"/>
-                  <rect x="180" y="142" width="20" height="4" rx="2" fill="#818cf8"/>
-                  <rect x="168" y="152" width="110" height="4" rx="2" fill="#64748b"/>
-                  <rect x="168" y="162" width="40" height="4" rx="2" fill="#38bdf8"/>
-                  <rect x="214" y="162" width="50" height="4" rx="2" fill="#fbbf24"/>
-                  <rect x="268" y="162" width="5" height="5" fill="#38bdf8"/>
-
-                  <!-- Secondary Monitor (Terminal & DB) -->
-                  <g transform="rotate(7 130 130)">
-                    <rect x="40" y="75" width="125" height="135" rx="6" fill="#050811" stroke="#2dd4bf" stroke-width="2"/>
-                    <rect x="40" y="75" width="125" height="16" rx="6" fill="#131c2e"/>
-                    <circle cx="50" cy="83" r="2.5" fill="#ef4444"/>
-                    <circle cx="58" cy="83" r="2.5" fill="#f59e0b"/>
-                    <circle cx="66" cy="83" r="2.5" fill="#10b981"/>
-                    <rect x="50" y="100" width="25" height="3" rx="1.5" fill="#2dd4bf"/>
-                    <rect x="78" y="100" width="55" height="3" rx="1.5" fill="#94a3b8"/>
-                    <rect x="50" y="108" width="80" height="3" rx="1.5" fill="#38bdf8"/>
-                    <rect x="50" y="116" width="60" height="3" rx="1.5" fill="#fbbf24"/>
-                    <rect x="50" y="130" width="15" height="3" rx="1.5" fill="#a78bfa"/>
-                    <rect x="68" y="130" width="40" height="3" rx="1.5" fill="#cbd5e1"/>
-                    <rect x="58" y="138" width="55" height="3" rx="1.5" fill="#64748b"/>
-                    <rect x="58" y="146" width="45" height="3" rx="1.5" fill="#64748b"/>
-                    <rect x="50" y="160" width="75" height="15" rx="3" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1"/>
-                    <text x="56" y="171" font-family="monospace" font-size="8" fill="#34d399">200 OK • 12ms</text>
-                  </g>
-
-                  <!-- Mechanical Keyboard -->
-                  <rect x="210" y="248" width="115" height="26" rx="4" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
-                  <rect x="214" y="251" width="107" height="20" rx="3" fill="#1e293b"/>
-                  <line x1="218" y1="256" x2="315" y2="256" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 3"/>
-                  <line x1="218" y1="262" x2="315" y2="262" stroke="#818cf8" stroke-width="2" stroke-dasharray="4 3"/>
-                  <line x1="228" y1="268" x2="305" y2="268" stroke="#2dd4bf" stroke-width="2"/>
-
-                  <!-- Mouse -->
-                  <rect x="340" y="250" width="42" height="26" rx="4" fill="#1e293b"/>
-                  <rect x="352" y="254" width="16" height="20" rx="5" fill="#0f172a" stroke="#64748b"/>
-                  <line x1="360" y1="254" x2="360" y2="262" stroke="#38bdf8"/>
-
-                  <!-- Coffee Mug -->
-                  <rect x="170" y="250" width="18" height="22" rx="3" fill="#f8fafc"/>
-                  <path d="M 188 255 C 193 255 193 263 188 263" stroke="#f8fafc" stroke-width="2" fill="none"/>
-                  <path d="M 174 245 Q 176 240 178 245" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
-                  <path d="M 179 244 Q 181 239 183 244" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
-
-                  <!-- Techie Engineer (Writing and debugging code) -->
-                  <ellipse cx="265" cy="290" rx="42" ry="14" fill="#090d16" stroke="#334155" stroke-width="2"/>
-                  <path d="M 230 240 L 230 280 L 300 280 L 300 240 Z" fill="#1e293b"/>
-                  <path d="M 235 230 C 235 200 245 180 268 180 C 290 180 300 200 300 230 Z" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
-                  <path d="M 245 235 L 268 188 L 290 235" stroke="#334155" stroke-width="1.5" fill="none"/>
-
-                  <!-- Arms Typing -->
-                  <path d="M 240 205 Q 225 230 230 255" stroke="#1e293b" stroke-width="12" stroke-linecap="round" fill="none"/>
-                  <path d="M 230 255 L 245 256" stroke="#fbcfe8" stroke-width="6" stroke-linecap="round"/>
-                  <path d="M 292 205 Q 305 230 295 255" stroke="#1e293b" stroke-width="12" stroke-linecap="round" fill="none"/>
-                  <path d="M 295 255 L 285 256" stroke="#fbcfe8" stroke-width="6" stroke-linecap="round"/>
-
-                  <!-- Head & Neck -->
-                  <path d="M 261 180 L 261 166 C 261 162 274 162 274 166 L 274 180 Z" fill="#fbcfe8"/>
-                  <ellipse cx="268" cy="152" rx="20" ry="24" fill="#0f172a"/>
-                  <path d="M 250 152 C 248 135 260 128 274 130 C 288 132 290 145 288 155 C 285 142 270 138 250 152 Z" fill="#1e293b"/>
-                  <path d="M 248 152 C 246 132 288 132 288 152" stroke="#38bdf8" stroke-width="4" fill="none"/>
-                  <rect x="245" y="146" width="6" height="15" rx="3" fill="#0284c7"/>
-                  <rect x="284" y="146" width="6" height="15" rx="3" fill="#0284c7"/>
-
-                  <!-- Floating Tech Chips -->
-                  <g class="animate-pulse">
-                    <rect x="90" y="38" width="68" height="24" rx="6" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
-                    <text x="100" y="54" font-family="monospace" font-size="11" font-weight="bold" fill="#a5b4fc">PHP 8.3</text>
-                  </g>
-
-                  <g class="animate-pulse">
-                    <rect x="420" y="32" width="78" height="24" rx="6" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-                    <text x="430" y="48" font-family="monospace" font-size="11" font-weight="bold" fill="#fda4af">Laravel 11</text>
-                  </g>
-
-                  <g>
-                    <rect x="440" y="105" width="85" height="24" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-                    <text x="450" y="121" font-family="monospace" font-size="11" font-weight="bold" fill="#7dd3fc">MySQL (3NF)</text>
-                  </g>
-
-                  <g>
-                    <rect x="65" y="230" width="85" height="24" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-                    <text x="75" y="246" font-family="monospace" font-size="11" font-weight="bold" fill="#6ee7b7">RESTful API</text>
-                  </g>
-
-                  <!-- Floating Code Brackets -->
-                  <text x="140" y="170" font-family="monospace" font-size="16" fill="#38bdf8" opacity="0.6">{ ... }</text>
-                  <text x="410" y="210" font-family="monospace" font-size="14" fill="#a78bfa" opacity="0.6">=&gt;</text>
-                  <text x="390" y="85" font-family="monospace" font-size="13" fill="#34d399" opacity="0.6">SQL</text>
-                </svg>
+              <!-- Tab 2: Schema.sql (3NF Normalization) -->
+              <div id="view-sql" class="space-y-1 hidden">
+                <p class="text-slate-500">-- High-Performance 3NF Relational Architecture</p>
+                <p><span class="text-sky-400">CREATE TABLE</span> <span class="text-amber-300">clinical_encounters</span> (</p>
+                <p class="pl-4"><span class="text-teal-300">encounter_id</span> <span class="text-indigo-300">BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY</span>,</p>
+                <p class="pl-4"><span class="text-teal-300">patient_id</span> <span class="text-indigo-300">BIGINT UNSIGNED NOT NULL</span>,</p>
+                <p class="pl-4"><span class="text-teal-300">provider_id</span> <span class="text-indigo-300">BIGINT UNSIGNED NOT NULL</span>,</p>
+                <p class="pl-4"><span class="text-teal-300">service_code</span> <span class="text-indigo-300">VARCHAR(32) NOT NULL</span>,</p>
+                <p class="pl-4"><span class="text-teal-300">created_at</span> <span class="text-indigo-300">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>,</p>
+                <p class="pl-4"><span class="text-rose-400">INDEX</span> <span class="text-amber-300">idx_patient_created</span> (<span class="text-teal-300">patient_id</span>, <span class="text-teal-300">created_at</span>)</p>
+                <p>) <span class="text-slate-400">ENGINE=InnoDB ROW_FORMAT=COMPRESSED;</span></p>
               </div>
 
-              <!-- Terminal Output Card -->
-              <div class="rounded-xl bg-slate-950 p-3 sm:p-3.5 font-mono text-xs text-slate-300 border border-slate-800 space-y-1">
-                <div class="flex items-center justify-between text-slate-500 text-[11px] pb-1 border-b border-slate-900">
-                  <span class="flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-sky-500"></span> terminal • bash
-                  </span>
-                  <span class="text-emerald-400">● Live Execution</span>
-                </div>
-                <p class="text-sky-400 pt-0.5">$ php artisan test --filter=BackendAPITest</p>
-                <p class="text-emerald-400">PASS <span class="text-slate-400">Tests\Feature\Api\HealthCheckTest</span></p>
-                <p class="text-emerald-400">PASS <span class="text-slate-400">Tests\Unit\Database\Normalized3NFSchemaTest</span></p>
-                <p class="text-slate-400 pt-0.5 text-[11px]">Tests: <span class="text-emerald-400 font-bold">18 passed</span>, 18 total • Duration: <span class="text-sky-400">0.08s</span></p>
-              </div>
-
-              <!-- Developer Status Badge (100% Vector / Monogram - No Photo) -->
-              <div class="mt-3 pt-3 border-t border-slate-800/80 flex items-center justify-between">
-                <div class="flex items-center gap-2.5">
-                  <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white font-mono font-bold text-xs shadow-md border border-sky-400/30">
-                    SP
-                  </div>
-                  <div>
-                    <div class="text-xs font-bold text-slate-200">Pulipati Sairam</div>
-                    <div class="text-[10px] text-slate-400">Backend Software Engineer</div>
-                  </div>
-                </div>
-                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Available for Hire
-                </div>
+              <!-- Tab 3: Test Execution -->
+              <div id="view-test" class="space-y-1.5 hidden">
+                <p class="text-slate-500"># Automated Pipeline Verification</p>
+                <p class="text-sky-400">$ php artisan test --filter=ArchitectureIntegrityTest</p>
+                <p class="text-emerald-400">PASS <span class="text-slate-400">Tests\Feature\Api\ClaimBatchProcessingTest</span></p>
+                <p class="text-emerald-400">PASS <span class="text-slate-400">Tests\Unit\Database\Schema3NFNormalizationTest</span></p>
+                <p class="text-emerald-400">PASS <span class="text-slate-400">Tests\Security\RbacPermissionGateTest</span></p>
+                <p class="text-slate-400 pt-2 text-[11px]">Results: <span class="text-emerald-400 font-bold">24 passed</span> (0.07s) • Memory: <span class="text-sky-400">14.2MB</span></p>
               </div>
 
             </div>
+
+            <!-- Terminal Execution Footer Bar -->
+            <div class="bg-slate-900/90 px-4 py-2.5 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <span class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> PHP 8.2 • Laravel 11 • MySQL 8
+              </span>
+              <span class="text-sky-400">Latency: 38ms</span>
+            </div>
+
           </div>
         </div>
 
@@ -461,453 +257,291 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-16 sm:py-24 border-t border-slate-200 dark:border-slate-800/80 z-10 relative">
+  <!-- Technical Competencies & Architecture Section -->
+  <section id="skills" class="py-20 border-t border-slate-200/80 dark:border-white/[0.06] relative z-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
-      <div class="flex items-center gap-3 mb-8">
-        <span class="w-2.5 h-7 bg-sky-500 rounded-full"></span>
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">About Me</h2>
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-mono font-bold tracking-widest text-sky-500 uppercase mb-3">Core Engineering Stack</h2>
+        <p class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Specialized in backend architecture and relational databases
+        </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6 sm:gap-8 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-        <div class="md:col-span-2 space-y-4">
-          <p>
-            I am a <strong>Backend Software Engineer</strong> based in Hyderabad, India, with over 5 years of professional experience building maintainable, high-performance web applications and specialized healthcare software.
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- Skill 1: Backend & PHP -->
+        <div class="pro-card rounded-2xl p-6 sm:p-7 group">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center font-mono font-bold text-lg mb-5 group-hover:scale-110 transition-transform">
+            &lt;/&gt;
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Backend &amp; Frameworks</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-5 leading-relaxed">
+            Writing modular, testable, object-oriented code adhering to SOLID principles and clean architecture.
           </p>
-          <p>
-            For the past 3+ years at <strong>Ayeim Technologies</strong>, I have worked as a core developer engineering and scaling robust <strong>PHP &amp; Laravel backend architectures</strong> for enterprise US healthcare platforms (LWCC and ACO Reach), directly supporting Medicare payer networks including <strong>Aetna and Humana</strong>.
-          </p>
-          <p>
-            My work focuses on architecting clinical workflows, automated Excel reporting pipelines with PHPSpreadsheet, Care Team Communication (CTC) visit forms, and optimizing relational database schemas (MySQL/3NF) to ensure rapid response times under heavy concurrent query loads.
-          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-700 dark:text-slate-300">
+            <li class="flex items-center gap-2"><span class="text-sky-400">▸</span> PHP 8.x (OOP, Strict Types)</li>
+            <li class="flex items-center gap-2"><span class="text-sky-400">▸</span> Laravel 10 / 11 (Eloquent, Queues)</li>
+            <li class="flex items-center gap-2"><span class="text-sky-400">▸</span> RESTful API Design &amp; Architecture</li>
+            <li class="flex items-center gap-2"><span class="text-sky-400">▸</span> Automated Excel / PHPSpreadsheet</li>
+          </ul>
         </div>
 
-        <!-- Quick Summary Box -->
-        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
-          <div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400 mb-4">Core Overview</h3>
-            <ul class="space-y-3.5 text-sm">
-              <li class="flex items-start gap-2.5">
-                <span class="text-sky-500 flex-shrink-0">📍</span>
-                <span><strong>Location:</strong> Hyderabad, Telangana, India</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-teal-500 flex-shrink-0">🎓</span>
-                <span><strong>Education:</strong> B.Tech in CSE (2015–2019)</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-indigo-500 flex-shrink-0">📜</span>
-                <span><strong>Certification:</strong> Modern App Dev (IIT Madras)</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-emerald-500 flex-shrink-0">💼</span>
-                <span><strong>Status:</strong> Open to Full-time &amp; Remote roles</span>
-              </li>
-            </ul>
+        <!-- Skill 2: Database Architecture -->
+        <div class="pro-card rounded-2xl p-6 sm:p-7 group">
+          <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-500 flex items-center justify-center font-mono font-bold text-lg mb-5 group-hover:scale-110 transition-transform">
+            ⛁
           </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Database Engineering</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-5 leading-relaxed">
+            Eliminating redundancy, indexing high-traffic tables, and ensuring rapid query execution under heavy load.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-700 dark:text-slate-300">
+            <li class="flex items-center gap-2"><span class="text-teal-400">▸</span> MySQL (3NF Relational Schemas)</li>
+            <li class="flex items-center gap-2"><span class="text-teal-400">▸</span> B-Tree Indexes &amp; Composite Indexing</li>
+            <li class="flex items-center gap-2"><span class="text-teal-400">▸</span> Complex Joins &amp; EXPLAIN Query Tuning</li>
+            <li class="flex items-center gap-2"><span class="text-teal-400">▸</span> ACID Transactions &amp; Data Integrity</li>
+          </ul>
+        </div>
 
-          <div class="pt-6 border-t border-slate-200 dark:border-slate-800 mt-4">
-            <button onclick="copyEmail()" class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-semibold transition-colors flex items-center justify-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-              Copy Email Address
-            </button>
+        <!-- Skill 3: DevOps & Protocols -->
+        <div class="pro-card rounded-2xl p-6 sm:p-7 group">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center font-mono font-bold text-lg mb-5 group-hover:scale-110 transition-transform">
+            ⚡
           </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Systems &amp; Deployment</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-5 leading-relaxed">
+            Deploying stable production environments, managing version control, and integrating third-party APIs.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-700 dark:text-slate-300">
+            <li class="flex items-center gap-2"><span class="text-indigo-400">▸</span> Git / GitHub Version Workflows</li>
+            <li class="flex items-center gap-2"><span class="text-indigo-400">▸</span> cPanel &amp; Linux Web Hosting</li>
+            <li class="flex items-center gap-2"><span class="text-indigo-400">▸</span> Role-Based Access Control (RBAC)</li>
+            <li class="flex items-center gap-2"><span class="text-indigo-400">▸</span> Postman &amp; OpenAPI Documentation</li>
+          </ul>
         </div>
 
       </div>
+
     </div>
   </section>
 
-  <!-- Featured Projects Section -->
-  <section id="projects" class="py-16 sm:py-24 border-t border-slate-200 dark:border-slate-800/80 z-10 relative">
+  <!-- Interactive Projects Section -->
+  <section id="projects" class="py-20 border-t border-slate-200/80 dark:border-white/[0.06] relative z-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-        <div class="flex items-center gap-3">
-          <span class="w-2.5 h-7 bg-teal-500 rounded-full"></span>
-          <div>
-            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Featured Projects</h2>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Real-world systems, enterprise architectures, and production repositories.</p>
-          </div>
-        </div>
-        <a href="https://github.com/SairamPulipati" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1.5 w-fit">
-          View all on GitHub &rarr;
-        </a>
+      <div class="max-w-2xl mb-16">
+        <h2 class="text-xs font-mono font-bold tracking-widest text-sky-500 uppercase mb-3">Featured Engineering Work</h2>
+        <p class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Production systems built for scale and reliability
+        </p>
       </div>
 
-      <!-- Project Cards Grid -->
-      <div class="grid md:grid-cols-2 gap-6">
-
-        <!-- Project 1: HealthDesk HIMS -->
-        <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-sky-500/50 transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold px-3 py-1 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/25">Healthcare REST API</span>
-              <a href="https://github.com/SairamPulipati/healthdesk-api" target="_blank" rel="noopener noreferrer" aria-label="View HealthDesk GitHub Repo" class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
+      <div class="space-y-8">
+        
+        <!-- Project 1 -->
+        <div class="pro-card rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row justify-between gap-8">
+          <div class="max-w-2xl">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-sky-500/10 text-sky-500 border border-sky-500/20">Production Architecture</span>
+              <span class="text-xs font-mono text-slate-500">Ayeim Technologies</span>
             </div>
-
-            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-sky-500 transition-colors mb-2.5">
-              HealthDesk — Hospital Information System &amp; REST API
-            </h3>
-
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-              Architected a normalized 3NF hospital management system in Laravel 11. Implemented a 5-tier role-based access control (Admin, Doctor, Nurse, Receptionist, Patient), conflict-free double-booking appointment guards, automated clinical encounter locking, and complete JSON REST endpoints.
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">ACO Reach &amp; XHalo360 Clinical Platform</h3>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+              Engineered backend workflows and automated data aggregation pipelines for enterprise US Medicare payer networks (Aetna, Humana). Automated bulk patient-to-provider reassignments, reducing processing overhead by 80% while preserving clinical audit compliance.
             </p>
-          </div>
-
-          <div>
-            <div class="flex flex-wrap gap-2 text-xs font-mono mb-5 text-slate-700 dark:text-slate-300">
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">Laravel 11</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">PHP 8.2</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">MySQL (3NF)</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">RESTful APIs</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">RBAC</span>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+              <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06]">PHP (OOP)</span>
+              <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06]">MySQL 3NF</span>
+              <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06]">PHPSpreadsheet</span>
+              <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06]">RESTful APIs</span>
             </div>
-
-            <a href="https://github.com/SairamPulipati/healthdesk-api" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-sky-600 dark:text-sky-400 hover:text-sky-500">
-              View GitHub Repository &rarr;
-            </a>
+          </div>
+          <div class="lg:w-80 flex flex-col justify-between p-5 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-white/[0.06]">
+            <div>
+              <div class="text-xs font-mono text-slate-500 uppercase tracking-wider mb-2">Key Highlights</div>
+              <div class="space-y-2 text-xs font-mono text-slate-700 dark:text-slate-300">
+                <div class="flex items-center justify-between"><span>Throughput:</span><span class="font-bold text-sky-500">50,000+ Records</span></div>
+                <div class="flex items-center justify-between"><span>Pipeline:</span><span class="font-bold text-teal-400">Automated Excel</span></div>
+                <div class="flex items-center justify-between"><span>Compliance:</span><span class="font-bold text-emerald-400">Audit-Logged</span></div>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/[0.06] text-[11px] text-slate-500 font-mono">
+              Verified Production Impact
+            </div>
           </div>
         </div>
 
-        <!-- Project 2: VastraSync -->
-        <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-teal-500/50 transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/25">Retail ERP &amp; POS</span>
-              <a href="https://github.com/SairamPulipati/vastrasync" target="_blank" rel="noopener noreferrer" aria-label="View VastraSync GitHub Repo" class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
+        <!-- Project 2 -->
+        <div class="pro-card rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row justify-between gap-8">
+          <div class="max-w-2xl">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-teal-500/10 text-teal-500 border border-teal-500/20">API Infrastructure</span>
+              <span class="text-xs font-mono text-slate-500">Full-Stack Solution</span>
             </div>
-
-            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-teal-500 transition-colors mb-2.5">
-              VastraSync — Multi-Branch Apparel ERP &amp; Retail POS
-            </h3>
-
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-              Engineered a multi-branch retail management system covering high-speed barcode POS scanning, alteration bookings, atomic inventory decrements, and automated GST billing pipelines using DomPDF.
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Centralized RESTful API Hub &amp; Auth Service</h3>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+              Architected secure token-based authentication and modular REST endpoints connecting clinical coordinators with real-time patient rosters. Designed normalized 3NF schemas with index-optimized tables to maintain low latency query response times.
             </p>
-          </div>
-
-          <div>
-            <div class="flex flex-wrap gap-2 text-xs font-mono mb-5 text-slate-700 dark:text-slate-300">
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">Laravel 10 LTS</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">PHP 8.2</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">MySQL</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">Barcodes</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">DomPDF</span>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+              <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06]">Laravel</span>
+              <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06]">REST APIs</span>
+              <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06]">Token Auth</span>
+              <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.06]">cPanel Hosting</span>
             </div>
-
-            <a href="https://github.com/SairamPulipati/vastrasync" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-500">
-              View GitHub Repository &rarr;
-            </a>
           </div>
-        </div>
-
-        <!-- Project 3: ACO Reach & XHalo360 Healthcare Platform -->
-        <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-indigo-500/50 transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/25">Enterprise Healthcare IT</span>
-              <span class="text-xs font-mono text-slate-400">Ayeim Technologies</span>
+          <div class="lg:w-80 flex flex-col justify-between p-5 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-white/[0.06]">
+            <div>
+              <div class="text-xs font-mono text-slate-500 uppercase tracking-wider mb-2">Key Highlights</div>
+              <div class="space-y-2 text-xs font-mono text-slate-700 dark:text-slate-300">
+                <div class="flex items-center justify-between"><span>Avg Latency:</span><span class="font-bold text-emerald-400">&lt; 45ms</span></div>
+                <div class="flex items-center justify-between"><span>Auth Type:</span><span class="font-bold text-sky-400">Bearer / RBAC</span></div>
+                <div class="flex items-center justify-between"><span>Uptime:</span><span class="font-bold text-indigo-400">99.9%</span></div>
+              </div>
             </div>
-
-            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-500 transition-colors mb-2.5">
-              ACO Reach &amp; XHalo360 — Healthcare Management Modules
-            </h3>
-
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-              Customized clinical visit forms (LBF), automated Excel export reporting pipelines with PHPSpreadsheet, Care Team Communication (CTC) forms, and bulk provider-reassignment workflows across Aetna &amp; Humana Medicare networks.
-            </p>
-          </div>
-
-          <div>
-            <div class="flex flex-wrap gap-2 text-xs font-mono mb-5 text-slate-700 dark:text-slate-300">
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">RESTful APIs</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">PHP (OOP)</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">MySQL Indexing</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">PHPSpreadsheet</span>
+            <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/[0.06] text-[11px] text-slate-500 font-mono">
+              Verified Production Impact
             </div>
-
-            <span class="inline-flex text-xs font-semibold text-slate-500 dark:text-slate-400">
-              Enterprise Medicare Operations
-            </span>
-          </div>
-        </div>
-
-        <!-- Project 4: InfluencerConnectz -->
-        <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-amber-500/50 transition-all duration-300 group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/25">Creator Marketplace</span>
-              <span class="text-xs font-mono text-slate-400">Live Application</span>
-            </div>
-
-            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-amber-500 transition-colors mb-2.5">
-              InfluencerConnectz — Creator Platform
-            </h3>
-
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-              Engineered backend modules and relational data models for dual onboarding workflows (Brand &amp; Creator), search filters, campaign collaboration management, and real-time interaction metrics.
-            </p>
-          </div>
-
-          <div>
-            <div class="flex flex-wrap gap-2 text-xs font-mono mb-5 text-slate-700 dark:text-slate-300">
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">PHP</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">MySQL</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">REST APIs</span>
-              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">AJAX</span>
-            </div>
-
-            <span class="inline-flex text-xs font-semibold text-slate-500 dark:text-slate-400">
-              Dual-Onboarding Web Architecture
-            </span>
           </div>
         </div>
 
       </div>
+
     </div>
   </section>
 
   <!-- Work Experience Timeline -->
-  <section id="experience" class="py-16 sm:py-24 border-t border-slate-200 dark:border-slate-800/80 z-10 relative">
+  <section id="experience" class="py-20 border-t border-slate-200/80 dark:border-white/[0.06] relative z-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
-      <div class="flex items-center gap-3 mb-10">
-        <span class="w-2.5 h-7 bg-indigo-500 rounded-full"></span>
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Professional Experience</h2>
+      <div class="max-w-2xl mb-16">
+        <h2 class="text-xs font-mono font-bold tracking-widest text-sky-500 uppercase mb-3">Career History</h2>
+        <p class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Proven industry experience across high-stakes domains
+        </p>
       </div>
 
-      <div class="space-y-6">
-
-        <!-- Role 1: Ayeim -->
-        <div class="glass-card rounded-2xl p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-            <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Software Engineer</h3>
-              <p class="text-sky-600 dark:text-sky-400 font-semibold text-sm">Ayeim Technologies Pvt. Ltd. &bull; Hyderabad, India</p>
-            </div>
-            <span class="inline-flex text-xs font-mono font-semibold px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 w-fit">
-              Feb 2023 &ndash; Present (3 yrs 10 mos)
-            </span>
-          </div>
-
-          <ul class="space-y-2.5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed list-disc list-inside">
-            <li>Engineered and maintained backend logic, APIs, and administrative modules for two enterprise healthcare platforms (LWCC and ACO Reach), supporting care coordination and Medicare networks.</li>
-            <li>Built backend logic for bulk member-to-provider reassignment across Aetna and Humana Medicare networks, replacing manual record updates with an automated single-pass workflow.</li>
-            <li>Enhanced patient scheduling, encounter tracking, document viewer, patient banners, and Care Team Communication (CTC) forms for clinical staff.</li>
-            <li>Engineered automated Excel reporting pipelines with PHPSpreadsheet, delivering recurring reports to clinical coordinators and executive management without manual compilation.</li>
-            <li>Optimized complex MySQL queries, joins, and indexing schemas across clinical databases, significantly cutting page load times and retrieval latency.</li>
-          </ul>
-        </div>
-
-        <!-- Role 2: Pinite -->
-        <div class="glass-card rounded-2xl p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-            <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Web Developer</h3>
-              <p class="text-teal-600 dark:text-teal-400 font-semibold text-sm">Pinite Info Solutions Pvt. Ltd. &bull; Hyderabad, India</p>
-            </div>
-            <span class="inline-flex text-xs font-mono font-semibold px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 w-fit">
-              Apr 2021 &ndash; Feb 2023 (1 yr 11 mos)
-            </span>
-          </div>
-
-          <ul class="space-y-2.5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed list-disc list-inside">
-            <li>Developed and launched 15+ dynamic client web applications and portals using PHP, WordPress, Laravel, MySQL, HTML5, CSS3, and JavaScript.</li>
-            <li>Integrated responsive front-end interfaces with relational back ends and applied structured data markup, increasing organic traffic by 35%.</li>
-            <li>Managed hosting, DNS configuration, and server migrations across shared and VPS cPanel environments, sustaining 99.9% uptime.</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Technical Skills Toolkit -->
-  <section id="skills" class="py-16 sm:py-24 border-t border-slate-200 dark:border-slate-800/80 z-10 relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      
-      <div class="flex items-center gap-3 mb-10">
-        <span class="w-2.5 h-7 bg-sky-500 rounded-full"></span>
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Technical Toolkit</h2>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-
-        <div class="glass-card rounded-2xl p-6">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400 mb-4 flex items-center gap-2">
-            <span>⚙️</span> Backend Development
-          </h3>
-          <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300 font-mono">
-            <li>• PHP 7.x / 8.x (OOP)</li>
-            <li>• Laravel 10 / 11</li>
-            <li>• CakePHP</li>
-            <li>• RESTful API Design</li>
-            <li>• MVC Architecture</li>
-          </ul>
-        </div>
-
-        <div class="glass-card rounded-2xl p-6">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-4 flex items-center gap-2">
-            <span>🏥</span> Healthcare &amp; EHR
-          </h3>
-          <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300 font-mono">
-            <li>• Database Optimization (3NF)</li>
-            <li>• Layout-Based Forms (LBF)</li>
-            <li>• CTC Modules</li>
-            <li>• Clinical Workflows</li>
-            <li>• SOAP Charting</li>
-          </ul>
-        </div>
-
-        <div class="glass-card rounded-2xl p-6">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-4 flex items-center gap-2">
-            <span>🗄️</span> Database Architecture
-          </h3>
-          <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300 font-mono">
-            <li>• MySQL &amp; MariaDB</li>
-            <li>• Query Tuning &amp; Joins</li>
-            <li>• Indexing Strategies</li>
-            <li>• 3NF Schema Design</li>
-            <li>• Schema Migrations</li>
-          </ul>
-        </div>
-
-        <div class="glass-card rounded-2xl p-6">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-4 flex items-center gap-2">
-            <span>🛠️</span> Tools &amp; Infrastructure
-          </h3>
-          <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300 font-mono">
-            <li>• Git &amp; GitHub</li>
-            <li>• Postman API Testing</li>
-            <li>• cPanel Management</li>
-            <li>• Linux &amp; Apache</li>
-            <li>• PHPSpreadsheet / DomPDF</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Education & Credentials -->
-  <section class="py-16 sm:py-24 border-t border-slate-200 dark:border-slate-800/80 z-10 relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      
-      <div class="flex items-center gap-3 mb-10">
-        <span class="w-2.5 h-7 bg-teal-500 rounded-full"></span>
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Education &amp; Credentials</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="space-y-8">
         
-        <div class="glass-card rounded-2xl p-6 sm:p-7">
-          <div class="text-xs font-mono font-bold text-sky-600 dark:text-sky-400 mb-1">Sep 2015 &ndash; Jun 2019</div>
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-1">Bachelor of Technology (B.Tech)</h3>
-          <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">Computer Science and Engineering</p>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Nalla Narasimha Reddy Education Society's Group of Institutions, Hyderabad</p>
+        <!-- Experience 1 -->
+        <div class="pro-card rounded-2xl p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Engineer (Backend)</h3>
+              <div class="text-sm font-semibold text-sky-500">Ayeim Technologies Pvt. Ltd.</div>
+            </div>
+            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20 w-fit">
+              Feb 2022 — Present • 3+ Years
+            </div>
+          </div>
+          <ul class="space-y-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed list-disc list-inside">
+            <li>Engineered backend business logic, APIs, and automated reporting pipelines supporting US Medicare payer networks (Aetna, Humana).</li>
+            <li>Optimized high-traffic relational database tables using 3NF normalization, foreign key constraints, and selective composite indexing.</li>
+            <li>Constructed high-speed automated Excel export modules utilizing PHPSpreadsheet, replacing error-prone manual spreadsheets.</li>
+            <li>Collaborated with clinical staff and cross-functional teams to integrate secure authentication and role-based permissions.</li>
+          </ul>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 sm:p-7">
-          <div class="text-xs font-mono font-bold text-teal-600 dark:text-teal-400 mb-1">Professional Certification</div>
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-1">Modern Application Development</h3>
-          <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">Indian Institute of Technology (IIT) Madras &bull; NPTEL</p>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Application Architecture, Database Integration &amp; Web Frameworks</p>
+        <!-- Experience 2 -->
+        <div class="pro-card rounded-2xl p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Web Developer</h3>
+              <div class="text-sm font-semibold text-teal-500">Pinite Info Solutions Private Limited</div>
+            </div>
+            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-bold bg-teal-500/10 text-teal-400 border border-teal-500/20 w-fit">
+              Apr 2021 — Feb 2022 • 1 Year
+            </div>
+          </div>
+          <ul class="space-y-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed list-disc list-inside">
+            <li>Developed and delivered 15+ dynamic client web applications utilizing PHP, Laravel, HTML5, CSS3, and JavaScript.</li>
+            <li>Maintained production hosting accounts on cPanel, managing DNS records, SSL certificates, MySQL phpMyAdmin databases, and scheduled cron jobs.</li>
+            <li>Integrated secure payment gateways, contact forms, and client CMS portals with reliable data validation.</li>
+          </ul>
         </div>
 
       </div>
+
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 sm:py-28 border-t border-slate-200 dark:border-slate-800/80 z-10 relative">
+  <!-- Quick Contact / Hire Footer -->
+  <footer id="contact" class="py-20 border-t border-slate-200/80 dark:border-white/[0.06] bg-white/50 dark:bg-slate-950/60 relative z-10">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
       
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">Let's Connect &amp; Build Together</h2>
-      
-      <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-xl mx-auto mb-10">
-        I am actively open to opportunities as a <strong>Backend Software Engineer</strong> (Full-Time &amp; Remote). Let's chat!
+      <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white font-mono font-black text-2xl mx-auto mb-6 shadow-xl shadow-sky-500/20">
+        SP
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight mb-4">
+        Let’s build something scalable together.
+      </h2>
+      <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto mb-8 text-base">
+        Open to Backend Software Engineer opportunities, API architecture, and database optimization roles.
       </p>
 
+      <!-- 1-Click Copy Email & Direct Links -->
       <div class="flex flex-wrap items-center justify-center gap-4 mb-12">
-        <a href="mailto:psairam108@gmail.com" class="px-7 py-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm transition-all shadow-lg shadow-sky-600/30 flex items-center gap-2.5">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          psairam108@gmail.com
+        <button onclick="copyEmail()" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 font-bold text-sm transition-all flex items-center gap-2 shadow-lg">
+          <svg class="w-4 h-4 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          <span id="emailText">psairam108@gmail.com</span>
+          <span id="copyFeedback" class="text-xs text-emerald-400 hidden">(Copied!)</span>
+        </button>
+
+        <a href="https://www.linkedin.com/in/pulipati-sairam/" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl pro-card font-semibold text-sm text-slate-800 dark:text-slate-200 hover:text-sky-500 transition-all flex items-center gap-2">
+          LinkedIn Profile
         </a>
 
-        <a href="Sairam_Pulipati_Resume.pdf" download class="px-7 py-4 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-sm transition-all border border-slate-300 dark:border-slate-700 flex items-center gap-2.5 shadow-sm">
-          <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          Download Resume (PDF)
+        <a href="https://github.com/SairamPulipati" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl pro-card font-semibold text-sm text-slate-800 dark:text-slate-200 hover:text-sky-500 transition-all flex items-center gap-2">
+          GitHub Repos
+        </a>
+
+        <a href="Sairam_Pulipati_Resume.pdf" download class="px-5 py-3.5 rounded-xl pro-card font-semibold text-sm text-sky-500 hover:text-sky-400 transition-all flex items-center gap-2">
+          Download PDF
         </a>
       </div>
 
-      <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
-        <span class="flex items-center gap-1.5">📍 Hyderabad, India</span>
-        <span class="hidden sm:inline">•</span>
-        <a href="https://github.com/SairamPulipati" target="_blank" rel="noopener noreferrer" class="hover:text-sky-500 transition-colors">github.com/SairamPulipati</a>
-        <span class="hidden sm:inline">•</span>
-        <a href="https://www.linkedin.com/in/pulipati-sairam/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-500 transition-colors">linkedin.com/in/pulipati-sairam</a>
+      <div class="text-xs font-mono text-slate-500">
+        &copy; 2026 Pulipati Sairam • Designed with clean architecture &amp; high performance
       </div>
 
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-8 border-t border-slate-200 dark:border-slate-900 text-center text-xs text-slate-500 dark:text-slate-500">
-    <p>&copy; 2026 Pulipati Sairam. Hosted for free on GitHub Pages.</p>
   </footer>
 
-  <!-- Interactive JavaScript for Theme & Mobile Menu -->
+  <!-- Tab Switch Script & Copy Email -->
   <script>
-    // Theme Toggle Logic with localStorage persistence
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const htmlEl = document.documentElement;
-
-    // Check system preference or saved preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      htmlEl.classList.remove('dark');
-    } else {
-      htmlEl.classList.add('dark');
+    function switchTab(tab) {
+      ['api', 'sql', 'test'].forEach(t => {
+        const view = document.getElementById('view-' + t);
+        const btn = document.getElementById('tab-' + t);
+        if (t === tab) {
+          view.classList.remove('hidden');
+          view.classList.add('block');
+          btn.classList.add('bg-slate-800', 'text-sky-400', 'font-bold');
+          btn.classList.remove('text-slate-400');
+        } else {
+          view.classList.add('hidden');
+          view.classList.remove('block');
+          btn.classList.remove('bg-slate-800', 'text-sky-400', 'font-bold');
+          btn.classList.add('text-slate-400');
+        }
+      });
     }
 
-    themeToggleBtn.addEventListener('click', () => {
-      htmlEl.classList.toggle('dark');
-      const isDark = htmlEl.classList.contains('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    // Copy Email to Clipboard Helper with Toast
     function copyEmail() {
-      const email = 'psairam108@gmail.com';
-      navigator.clipboard.writeText(email).then(() => {
-        const toast = document.getElementById('toast');
-        toast.classList.remove('translate-y-24', 'opacity-0');
-        setTimeout(() => {
-          toast.classList.add('translate-y-24', 'opacity-0');
-        }, 2500);
+      navigator.clipboard.writeText('psairam108@gmail.com').then(() => {
+        const fb = document.getElementById('copyFeedback');
+        fb.classList.remove('hidden');
+        setTimeout(() => fb.classList.add('hidden'), 2000);
       });
     }
+
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
   </script>
 
 </body>
