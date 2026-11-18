@@ -94,6 +94,28 @@
       box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
     }
 
+    
+    /* Technologies I worked with cards */
+    .tech-card {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dark .tech-card {
+      background: rgba(18, 20, 32, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .tech-card:hover {
+      border-color: rgba(14, 165, 233, 0.5);
+      box-shadow: 0 0 25px rgba(14, 165, 233, 0.15);
+      transform: translateY(-3px);
+    }
+    .dark .tech-card:hover {
+      background: rgba(24, 28, 45, 0.95);
+      border-color: rgba(56, 189, 248, 0.5);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.18), inset 0 0 15px rgba(56, 189, 248, 0.05);
+      transform: translateY(-3px);
+    }
     /* Smooth focus rings for accessibility */
     a:focus-visible, button:focus-visible {
       outline: 2px solid #0284c7;
@@ -531,67 +553,158 @@
     </div>
   </section>
 
-  <!-- Technical Skills Toolkit -->
-  <section id="skills" class="py-16 sm:py-24 border-t border-slate-200 dark:border-slate-800/80 z-10 relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <!-- Technologies I worked with (Tools of the Trade) -->
+  <section id="skills" class="py-20 sm:py-28 border-t border-slate-200 dark:border-slate-800/80 z-10 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
       
-      <div class="flex items-center gap-3 mb-10">
-        <span class="w-2.5 h-7 bg-sky-500 rounded-full"></span>
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Technical Toolkit</h2>
+      <!-- Top Monospace Tag -->
+      <div class="text-xs font-mono text-sky-600 dark:text-cyan-400 font-semibold tracking-widest uppercase mb-3">
+        // TOOLS OF THE TRADE
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+      <!-- Main Title with Gradient -->
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">
+        Technologies I <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-indigo-400 to-sky-400 dark:from-purple-400 dark:via-violet-400 dark:to-cyan-400">worked with</span>
+      </h2>
 
-        <div class="glass-card rounded-2xl p-6">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400 mb-4 flex items-center gap-2">
-            <span>⚙️</span> Backend Development
-          </h3>
-          <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300 font-mono">
-            <li>• PHP 7.x / 8.x (OOP)</li>
-            <li>• Laravel 10 / 11</li>
-            <li>• CakePHP</li>
-            <li>• RESTful API Design</li>
-            <li>• MVC Architecture</li>
-          </ul>
+      <!-- Subtitle -->
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xl mx-auto mb-12 sm:mb-16">
+        Battle-tested through real projects and production deployments.
+      </p>
+
+      <!-- Grid of Tech Cards (7 cols on lg, 4 on md, 3 on sm, 2 on mobile) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3.5 sm:gap-4">
+        
+        <!-- 1. PHP -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 128 128">
+            <ellipse cx="64" cy="64" rx="58" ry="34" fill="#777bb4"/>
+            <path d="M46 54h-7.6a1 1 0 00-1 1l-5.6 20a1 1 0 001 1.2h4.5a1 1 0 001-.8l1.4-5.2h3.3c5 0 8.4-2.8 9.5-6.9 1-3.6-.8-9.3-6.5-9.3zm-3.6 11.4h-2.7l1.5-5.6h2.7c2.3 0 3.2 1.8 2.7 3.6-.5 1.7-2.1 2-4.2 2zm29.3-11.4h-5.2a1 1 0 00-1 .8L60 75.2a1 1 0 001 1.2h5.2a1 1 0 001-.8l1.8-6.3h6.6a1 1 0 001-.8l1.8-6.3a1 1 0 00-1-1.2h-6.6l1.2-4.2h7.6a1 1 0 001-.8l1.8-6.3a1 1 0 00-1-1.2zm23.6 0h-7.6a1 1 0 00-1 1l-5.6 20a1 1 0 001 1.2h4.5a1 1 0 001-.8l1.4-5.2h3.3c5 0 8.4-2.8 9.5-6.9 1-3.6-.8-9.3-6.5-9.3zm-3.6 11.4h-2.7l1.5-5.6h2.7c2.3 0 3.2 1.8 2.7 3.6-.5 1.7-2.1 2-4.2 2z" fill="#fff"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">PHP</span>
         </div>
 
-        <div class="glass-card rounded-2xl p-6">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-4 flex items-center gap-2">
-            <span>🏥</span> Healthcare &amp; EHR
-          </h3>
-          <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300 font-mono">
-            <li>• Clinical Modules &amp; FormEngine</li>
-            <li>• Layout-Based Forms (LBF)</li>
-            <li>• CTC Modules</li>
-            <li>• Clinical Workflows</li>
-            <li>• SOAP Charting</li>
-          </ul>
+        <!-- 2. MySQL -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6c0-1.657 3.582-3 8-3s8 1.343 8 3v12c0 1.657-3.582 3-8 3s-8-1.343-8-3V6z" stroke="#00758f" stroke-width="1.8"/>
+            <path d="M4 12c0 1.657 3.582 3 8 3s8-1.343 8-3" stroke="#f29111" stroke-width="1.8"/>
+            <path d="M4 6c0 1.657 3.582 3 8 3s8-1.343 8-3" stroke="#00758f" stroke-width="1.8"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">MySQL</span>
         </div>
 
-        <div class="glass-card rounded-2xl p-6">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-4 flex items-center gap-2">
-            <span>🗄️</span> Database Architecture
-          </h3>
-          <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300 font-mono">
-            <li>• MySQL &amp; MariaDB</li>
-            <li>• Query Tuning &amp; Joins</li>
-            <li>• Indexing Strategies</li>
-            <li>• 3NF Schema Design</li>
-            <li>• Schema Migrations</li>
-          </ul>
+        <!-- 3. Laravel -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
+            <path d="M10.5 4.5l8 4.5v9l-8 4.5-8-4.5v-9l8-4.5z" stroke="#ff2d20" stroke-width="1.8" fill="rgba(255,45,32,0.1)"/>
+            <path d="M10.5 4.5v18M18.5 9l-8 4.5-8-4.5" stroke="#ff2d20" stroke-width="1.8"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">Laravel</span>
         </div>
 
-        <div class="glass-card rounded-2xl p-6">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-4 flex items-center gap-2">
-            <span>🛠️</span> Tools &amp; Infrastructure
-          </h3>
-          <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300 font-mono">
-            <li>• Git &amp; GitHub</li>
-            <li>• Postman API Testing</li>
-            <li>• cPanel Management</li>
-            <li>• Linux &amp; Apache</li>
-            <li>• PHPSpreadsheet / DomPDF</li>
-          </ul>
+        <!-- 4. REST APIs -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.8">
+            <rect x="2" y="4" width="20" height="6" rx="2" fill="rgba(6,182,212,0.1)"/>
+            <rect x="2" y="14" width="20" height="6" rx="2" fill="rgba(6,182,212,0.1)"/>
+            <circle cx="6" cy="7" r="1" fill="#06b6d4"/>
+            <circle cx="6" cy="17" r="1" fill="#06b6d4"/>
+            <path d="M14 10v4M18 10v4" stroke-linecap="round"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">REST APIs</span>
+        </div>
+
+        <!-- 5. JavaScript -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <div class="w-10 h-10 rounded-lg bg-[#f7df1e] flex items-center justify-center text-black font-black text-sm transition-transform group-hover:scale-110 shadow-md">
+            JS
+          </div>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">JavaScript</span>
+        </div>
+
+        <!-- 6. jQuery -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9.5" fill="rgba(7,105,173,0.15)" stroke="#0769ad" stroke-width="1.8"/>
+            <path d="M8 12c1.5-2 3.5-3 5.5-3 1.5 0 2.5.5 2.5 1.5 0 2-4 3-4 5.5 0 1 .5 2 1.5 2" stroke="#0769ad" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">jQuery</span>
+        </div>
+
+        <!-- 7. AJAX -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.8">
+            <path d="M4 12a8 8 0 0114.93-4M20 12a8 8 0 01-14.93 4" stroke-linecap="round"/>
+            <polyline points="19 4 19 8 15 8" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="5 20 5 16 9 16" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">AJAX</span>
+        </div>
+
+        <!-- 8. OpenEMR -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="1.8">
+            <rect x="3" y="3" width="18" height="18" rx="5" fill="rgba(20,184,166,0.15)"/>
+            <path d="M12 7v10M7 12h10" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">OpenEMR</span>
+        </div>
+
+        <!-- 9. WordPress -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9.5" fill="rgba(33,117,155,0.15)" stroke="#21759b" stroke-width="1.8"/>
+            <path d="M5.5 15l3.5-9 2 6.5 2.5-6.5 3.5 9" stroke="#21759b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">WordPress</span>
+        </div>
+
+        <!-- 10. HTML5 -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
+            <path d="M4 3l1.5 17L12 22l6.5-2L20 3H4z" stroke="#e34f26" stroke-width="1.8" fill="rgba(227,79,38,0.12)"/>
+            <path d="M8 8h8M8 12h7l-.5 4.5L12 17.5l-2.5-1" stroke="#e34f26" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">HTML5</span>
+        </div>
+
+        <!-- 11. CSS3 -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
+            <path d="M4 3l1.5 17L12 22l6.5-2L20 3H4z" stroke="#1572b6" stroke-width="1.8" fill="rgba(21,114,182,0.12)"/>
+            <path d="M16 8H8l.5 4h7l-.5 4.5-3 1-3-1" stroke="#1572b6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">CSS3</span>
+        </div>
+
+        <!-- 12. Bootstrap -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="5" fill="rgba(121,82,179,0.15)" stroke="#7952b3" stroke-width="1.8"/>
+            <path d="M9 7.5h4a2.25 2.25 0 010 4.5H9V7.5zm0 4.5h4.5a2.25 2.25 0 010 4.5H9V12z" stroke="#7952b3" stroke-width="1.8"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">Bootstrap</span>
+        </div>
+
+        <!-- 13. Tailwind CSS -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.8">
+            <path d="M6 12c1.5-3 4-4.5 7.5-4.5 4.5 0 6 3 7.5 4.5-1.5 3-4 4.5-7.5 4.5-4.5 0-6-3-7.5-4.5z" fill="rgba(56,189,248,0.15)"/>
+            <path d="M3 16.5c1-2 2.5-3 5-3 3 0 4 2 5 3-1 2-2.5 3-5 3-3 0-4-2-5-3z" fill="rgba(56,189,248,0.15)"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">Tailwind CSS</span>
+        </div>
+
+        <!-- 14. Git -->
+        <div class="tech-card rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-pointer group">
+          <svg class="w-10 h-10 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="#f05032" stroke-width="1.8">
+            <circle cx="12" cy="5" r="2.5" fill="rgba(240,80,50,0.15)"/>
+            <circle cx="5" cy="18" r="2.5" fill="rgba(240,80,50,0.15)"/>
+            <circle cx="19" cy="18" r="2.5" fill="rgba(240,80,50,0.15)"/>
+            <path d="M12 7.5v4M5 15.5l5.5-4M19 15.5l-5.5-4" stroke-linecap="round"/>
+          </svg>
+          <span class="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyan-300">Git</span>
         </div>
 
       </div>
